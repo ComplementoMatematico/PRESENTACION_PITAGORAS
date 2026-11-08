@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Transformaciones isométricas y Teorema de Pitágoras</title><style>
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Transformaciones isométricas y Teorema de Pitágoras</title><style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;background:#0d1522;font-family:Calibri,Carlito,"Segoe UI",Arial,sans-serif;overflow:hidden}
+html,body{height:100%;max-width:100vw;overflow:hidden;-webkit-tap-highlight-color:transparent;background:#0d1522;font-family:Calibri,Carlito,"Segoe UI",Arial,sans-serif;overflow:hidden}
 #stage{position:absolute;width:1280px;height:720px;left:50%;top:50%;transform-origin:center}
 .slide{position:absolute;inset:0;background:#fff;color:#1B2A41;padding:44px 64px;opacity:0;visibility:hidden;transform:scale(.97);transition:opacity .6s ease,transform .6s ease,visibility .6s}
 .slide.on{opacity:1;visibility:visible;transform:none}
@@ -61,8 +61,45 @@ ul{padding-left:24px}li{margin-bottom:10px}
 .pn{position:absolute;right:28px;bottom:16px;font-size:14px;color:#6C7A92}
 #bar{position:fixed;left:0;bottom:0;height:4px;background:#FF6B5B;transition:width .4s}
 #notes{position:fixed;left:0;right:0;bottom:4px;background:rgba(27,42,65,.95);color:#fff;font-size:17px;padding:14px 24px;display:none;line-height:1.4}
-#help{position:fixed;top:10px;right:14px;color:#8899b0;font-size:13px;transition:opacity 1s}
-</style></head><body><div id="stage"><section class="slide dark" data-notes="Integrante 1 presenta al grupo: saluda, dice el tema y nombra a los cuatro integrantes. En una frase: hoy veremos cómo mover figuras sin cambiarlas y cómo calcular lados de triángulos rectángulos."><div class="cover"><div class="cl"><div class="kick">DISERTACIÓN · MATEMÁTICA · 8° BÁSICO B</div>
+@media (max-width:819px){#help{display:none}}
+#help{position:fixed;top:10px;right:14px;white-space:nowrap;color:#8899b0;font-size:13px;transition:opacity 1s}
+
+#nav{display:none}
+body.m #stage{position:fixed;inset:0;left:0;top:0;width:auto;height:auto;transform:none!important}
+body.m .slide{padding:22px 18px 90px;overflow-y:auto;-webkit-overflow-scrolling:touch;transform:translateX(30px)}
+body.m .slide.on{transform:none}
+body.m h2{font-size:26px;margin-bottom:14px;line-height:1.2}
+body.m h3{font-size:19px}
+body.m p,body.m li,body.m .step,body.m .note{font-size:17px}
+body.m small{font-size:15px}
+body.m .g2,body.m .g3{grid-template-columns:1fr;gap:14px}
+body.m .g3.tall{height:auto;margin-top:8px}
+body.m .card{padding:18px;height:auto}
+body.m .card .step{margin:12px 0;font-size:18px}
+body.m .card.dk h3{font-size:21px;margin:12px 0 8px}body.m .card.dk p{font-size:17px}
+body.m .split{flex-direction:column;gap:14px;align-items:stretch}
+body.m .split.r .col.c{order:-1}
+body.m .pic,body.m .pic.sq{width:100%;max-width:440px;align-self:center}
+body.m .chip{font-size:17px}
+body.m .hook{font-size:18px;margin-bottom:16px}
+body.m .formula{font-size:38px;padding:10px}
+body.m .ic{width:46px;height:46px}body.m .ic svg{width:22px;height:22px}
+body.m .lad img{width:45%}body.m .lad b{font-size:17px}
+body.m .calc{font-size:21px}
+body.m .list{gap:14px}body.m .row b{font-size:18px}
+body.m .cover{flex-direction:column;align-items:stretch;height:auto}
+body.m .cr{height:auto;flex-direction:column}
+body.m .float{width:min(70vw,320px);margin:10px auto}
+body.m .date{position:static;text-align:center}
+body.m .big{font-size:32px}body.m .sub{font-size:17px;margin-bottom:18px}
+body.m .team{font-size:16px}
+body.m .pn,body.m #help{display:none}
+body.m #nav{display:flex;position:fixed;left:0;right:0;bottom:4px;justify-content:space-between;align-items:center;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(13,21,34,.92);z-index:5}
+#nav button{background:#FF6B5B;color:#fff;border:0;border-radius:24px;font-size:18px;font-weight:bold;padding:10px 20px;font-family:inherit}
+#nav button.ghost{background:#33415C;font-size:15px;padding:10px 14px}
+#nav span{color:#EEF3F8;font-size:15px}
+body.m #notes{bottom:70px;max-height:40vh;overflow:auto;font-size:15px;z-index:6}
+</style></head><body><script>if(innerWidth<820||innerHeight<500)document.body.classList.add("m")</script><div id="stage"><section class="slide dark" data-notes="Integrante 1 presenta al grupo: saluda, dice el tema y nombra a los cuatro integrantes. En una frase: hoy veremos cómo mover figuras sin cambiarlas y cómo calcular lados de triángulos rectángulos."><div class="cover"><div class="cl"><div class="kick">DISERTACIÓN · MATEMÁTICA · 8° BÁSICO B</div>
 <h1 class="big">Transformaciones isométricas y Teorema de Pitágoras</h1>
 <p class="sub">Cómo mover figuras sin deformarlas y calcular lados de un triángulo rectángulo</p>
 <div class="team"><b>Integrantes</b><div contenteditable="true" spellcheck="false">Integrante 1: Nombre Apellido<br>Integrante 2: Nombre Apellido<br>Integrante 3: Nombre Apellido<br>Integrante 4: Nombre Apellido</div></div></div>
@@ -105,12 +142,14 @@ ul{padding-left:24px}li{margin-bottom:10px}
 <div class="f up"><div class="row src"><span class="ic" style="background:#1B2A41"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" color="#fff" style="color:#fff" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"></path></svg></span><div><b>Texto del Estudiante Matemática 8° Básico</b><small>Ministerio de Educación de Chile (Mineduc)</small></div></div></div>
 <div class="f up"><div class="row src"><span class="ic" style="background:#1B2A41"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" color="#fff" style="color:#fff" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"></path></svg></span><div><b>Currículum Nacional – Matemática 8° Básico</b><small>www.curriculumnacional.cl</small></div></div></div>
 <div class="f up"><div class="row src"><span class="ic" style="background:#1B2A41"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" color="#fff" style="color:#fff" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg></span><div><b>Khan Academy en español: Teorema de Pitágoras y transformaciones</b><small>es.khanacademy.org</small></div></div></div>
-<div class="f up"><div class="row src"><span class="ic" style="background:#1B2A41"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" color="#fff" style="color:#fff" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M128,256A128,128,0,1,0,256,384,128,128,0,0,0,128,256Zm379-54.86L400.07,18.29a37.26,37.26,0,0,0-64.14,0L229,201.14C214.76,225.52,232.58,256,261.09,256H474.91C503.42,256,521.24,225.52,507,201.14ZM480,288H320a32,32,0,0,0-32,32V480a32,32,0,0,0,32,32H480a32,32,0,0,0,32-32V320A32,32,0,0,0,480,288Z"></path></svg></span><div><b>GeoGebra: actividades de isometrías y Pitágoras</b><small>www.geogebra.org</small></div></div></div></div><div class="pn">9</div></section></div><div id="bar"></div><div id="notes"></div><div id="help">→ / clic: avanzar · ← retroceder · F pantalla completa · N notas</div><script>
+<div class="f up"><div class="row src"><span class="ic" style="background:#1B2A41"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" color="#fff" style="color:#fff" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M128,256A128,128,0,1,0,256,384,128,128,0,0,0,128,256Zm379-54.86L400.07,18.29a37.26,37.26,0,0,0-64.14,0L229,201.14C214.76,225.52,232.58,256,261.09,256H474.91C503.42,256,521.24,225.52,507,201.14ZM480,288H320a32,32,0,0,0-32,32V480a32,32,0,0,0,32,32H480a32,32,0,0,0,32-32V320A32,32,0,0,0,480,288Z"></path></svg></span><div><b>GeoGebra: actividades de isometrías y Pitágoras</b><small>www.geogebra.org</small></div></div></div></div><div class="pn">9</div></section></div><div id="bar"></div><div id="notes"></div><div id="nav"><button id="bp" aria-label="Anterior">‹</button><button id="bt" class="ghost">Notas</button><span id="cnt"></span><button id="bn" aria-label="Siguiente">›</button></div><div id="help">→ / clic: avanzar · ← retroceder · F pantalla completa · N notas</div><script>
 const S=[...document.querySelectorAll('.slide')];let i=0,f=0;
 const frags=s=>[...s.querySelectorAll('.f')];
-function fit(){const st=document.getElementById('stage');const k=Math.min(innerWidth/1280,innerHeight/720);st.style.transform='translate(-50%,-50%) scale('+k+')'}
+function fit(){const m=innerWidth<820||innerHeight<500;document.body.classList.toggle('m',m);const st=document.getElementById('stage');if(m){st.style.transform='';return}const k=Math.min(innerWidth/1280,innerHeight/720);st.style.transform='translate(-50%,-50%) scale('+k+')'}
+const mob=()=>document.body.classList.contains('m');
+function reveal(){if(!mob())return;const v=S[i].querySelectorAll('.f.vis');if(f>0&&v.length)setTimeout(()=>v[v.length-1].scrollIntoView({behavior:'smooth',block:'nearest'}),80);else S[i].scrollTop=0}
 function show(){S.forEach((s,j)=>s.classList.toggle('on',j===i));frags(S[i]).forEach((e,j)=>e.classList.toggle('vis',j<f));
-document.getElementById('bar').style.width=((i+1)/S.length*100)+'%';document.getElementById('notes').textContent='Notas: '+S[i].dataset.notes;location.hash=i+1}
+document.getElementById('bar').style.width=((i+1)/S.length*100)+'%';document.getElementById('notes').textContent='Notas: '+S[i].dataset.notes;location.hash=i+1;const c=document.getElementById('cnt');if(c)c.textContent=(i+1)+' / '+S.length;reveal()}
 function next(){if(f<frags(S[i]).length)f++;else if(i<S.length-1){i++;f=0}show()}
 function prev(){if(f>0)f--;else if(i>0){i--;f=frags(S[i]).length}show()}
 addEventListener('keydown',e=>{if(e.target.isContentEditable)return;
@@ -119,7 +158,11 @@ else if(['ArrowLeft','ArrowUp','PageUp','Backspace'].includes(e.key)){e.preventD
 else if(e.key==='n'||e.key==='N'){const n=document.getElementById('notes');n.style.display=n.style.display==='block'?'none':'block'}
 else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}
 else if(e.key==='Home'){i=0;f=0;show()}});
-addEventListener('click',e=>{if(e.target.closest('[contenteditable]'))return;(e.clientX<innerWidth/4)?prev():next()});
-addEventListener('resize',fit);const h=parseInt(location.hash.slice(1));if(h>0&&h<=S.length)i=h-1;fit();show();
+addEventListener('click',e=>{if(e.target.closest('[contenteditable],#nav,#notes'))return;(e.clientX<innerWidth/4)?prev():next()});
+addEventListener('resize',fit);
+let tx=0,ty=0;addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5){dx<0?next():prev()}},{passive:true});
+document.getElementById('bp').onclick=prev;document.getElementById('bn').onclick=next;
+document.getElementById('bt').onclick=()=>{const n=document.getElementById('notes');n.style.display=n.style.display==='block'?'none':'block'};const h=parseInt(location.hash.slice(1));if(h>0&&h<=S.length)i=h-1;fit();show();
 setTimeout(()=>document.getElementById('help').style.opacity=0,5000);
 </script></body></html>
